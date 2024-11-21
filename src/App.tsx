@@ -22,15 +22,16 @@ const App: React.FC = () => {
         </header>
 
         {/* 页面内容 */}
-        <div id="main"></div>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/finance" element={<FinanceManager />} />
-          <Route path="/calendar" element={<CalendarComponent />} />
-          <Route path="/attendance" element={<AttendanceTracker />} />
-          <Route path="/scheduler" element={<LeaveScheduler />} />
-          <Route path="/feedback" element={<Feedback />} />
-        </Routes>
+        <div id="main">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/finance" element={<FinanceManager />} />
+            <Route path="/calendar" element={<CalendarComponent />} />
+            <Route path="/attendance" element={<AttendanceTracker />} />
+            <Route path="/scheduler" element={<LeaveScheduler />} />
+            <Route path="/feedback" element={<Feedback />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

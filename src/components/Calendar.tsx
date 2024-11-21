@@ -17,20 +17,20 @@ const CalendarComponent: React.FC = () => {
   const [newTask, setNewTask] = useState<string>(''); // 新输入的代办事项
   const [selectedDate, setSelectedDate] = useState<Date | null>(null); // 被选中的日期
 
-
-  // 从 localStorage 读取任务和上班日
+  // 讀取數據
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks') || '[]') as Task[];
     const savedWorkdays = JSON.parse(localStorage.getItem('workdays') || '[]') as string[];
     setTasks(savedTasks);
     setWorkdays(savedWorkdays);
-  }, []);
+  }, []); // 空依賴數組確保只在組件初始化時執行一次
 
-  // 更新 localStorage
+  // 寫入數據
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     localStorage.setItem('workdays', JSON.stringify(workdays));
-  }, [tasks, workdays]);
+  }, [tasks, workdays]); // 當 tasks 或 workdays 改變時才寫入
+
 
   // 切换单个任务的完成状态
   const toggleTaskStatus = (taskId: number) => {
@@ -38,10 +38,10 @@ const CalendarComponent: React.FC = () => {
       tasks.map((task) =>
         task.id === taskId
           ? {
-              ...task,
-              status: task.status === '未完成' ? '已完成' : '未完成',
-              className: task.status === '未完成' ? 'button-completed' : 'button-pending',
-            }
+            ...task,
+            status: task.status === '未完成' ? '已完成' : '未完成',
+            className: task.status === '未完成' ? 'button-completed' : 'button-pending',
+          }
           : task
       )
     );
@@ -109,8 +109,8 @@ const CalendarComponent: React.FC = () => {
             return isSelected
               ? 'selected-day'   // 选中的日期
               : isWorkday
-              ? 'workday'        // 上班日
-              : '';              // 默认情况
+                ? 'workday'        // 上班日
+                : '';              // 默认情况
           }}
         />
       </div>
