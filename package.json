@@ -5,6 +5,7 @@
   "type": "module",
   "description": "A React-based employee management system with features like financial management, calendar, attendance, leave tracking, and feedback.",
   "license": "MIT",
+  "homepage": "https://Demi-AI.github.io/ts",
   "scripts": {
     "start": "react-scripts start",
     "dev": "vite",
