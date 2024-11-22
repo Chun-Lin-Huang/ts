@@ -8,9 +8,12 @@ export default defineConfig({
       overlay: false,
     },
   },
+  base: '/ts/', // 設定基礎路徑
   build: {
+    outDir: 'dist',
     rollupOptions: {
-      input: '/public/index.html',  // 確保指向正確的入口檔案
+      input: '/public/index.html',
     },
   },
 });
+
