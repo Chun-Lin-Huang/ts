@@ -14,11 +14,11 @@ const App: React.FC = () => {
         {/* 导航栏 */}
         <header className="header-nav">
           <Link to="/" className="nav-button">Home</Link>
-          <Link to="/ts/#/finance" className="nav-button">Finance Manager</Link>
-          <Link to="/ts/#/calendar" className="nav-button">Calendar</Link>
-          <Link to="/ts/#/attendance" className="nav-button">Attendance Tracker</Link>
-          <Link to="/ts/#/scheduler" className="nav-button">Leave Scheduler</Link>
-          <Link to="/ts/#/feedback" className="nav-button">Feedback</Link>
+          <Link to="/finance" className="nav-button">Finance Manager</Link>
+          <Link to="/calendar" className="nav-button">Calendar</Link>
+          <Link to="/attendance" className="nav-button">Attendance Tracker</Link>
+          <Link to="/scheduler" className="nav-button">Leave Scheduler</Link>
+          <Link to="/feedback" className="nav-button">Feedback</Link>
         </header>
 
         {/* 页面内容 */}

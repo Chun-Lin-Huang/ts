@@ -5,15 +5,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     hmr: {
-      overlay: false,
+      overlay: false, // 禁止 HMR 错误覆盖
     },
   },
-  base: '/ts/', // 設定基礎路徑
+  base: '/ts/', // 设置基准路径，确保指向 GitHub Pages 子路径
   build: {
-    outDir: 'dist',
-    rollupOptions: {
-      input: '/public/index.html',
-    },
+    outDir: 'dist', // 构建输出目录
+    // 删除 input 配置，让 Vite 默认处理入口文件
   },
 });
-
